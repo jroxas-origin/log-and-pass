@@ -16,8 +16,6 @@ app.post("/get-appointments", (req, res) => {
   res.send("Hello from server");
 });
 
-const server = app.listen(3000, function () {
-  console.log(
-    `${new Date()} : HTTP server running using HTTP on port ${3000}...`
-  );
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
