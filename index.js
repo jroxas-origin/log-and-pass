@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  console.log(req.body);
+  console.log(req);
   res.status(200).send({ message: 'Hello from server!', body: req.body });
 });
 
