@@ -5,6 +5,11 @@ const app = express();
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+  //app.get('/', verifyCognitoToken, verifyIDCSToken, verifyAuthenticated, (req, res) => {
+  res.send("Hello from server");
+});
+
 app.post("/get-appointments", (req, res) => {
   console.log(req.body);
   //app.get('/', verifyCognitoToken, verifyIDCSToken, verifyAuthenticated, (req, res) => {
@@ -16,5 +21,3 @@ const server = app.listen(3000, function () {
     `${new Date()} : HTTP server running using HTTP on port ${3000}...`
   );
 });
-
-server.setTimeout(30000);
