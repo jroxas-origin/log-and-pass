@@ -21,6 +21,11 @@ app.get("/", (req, res) => {
   res.send("Hello from server");
 });
 
+app.post("/log", (req, res) => {
+  console.log(req);
+  res.status(200).send(req);
+});
+
 app.post("/rest", (req, res) => {
 
   try {
