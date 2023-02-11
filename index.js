@@ -2,6 +2,8 @@ const express = require("express");
 const http = require("http");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+var multer = require('multer');
+var forms = multer();
 
 const app = express();
 
@@ -15,6 +17,7 @@ var rawBodySaver = function (req, res, buf, encoding) {
 
 app.use(bodyParser.json({ verify: rawBodySaver }));
 app.use(bodyParser.urlencoded({ verify: rawBodySaver, extended: true }));
+app.use(forms.array()); 
 app.use(bodyParser.raw({ verify: rawBodySaver, type: '*/*' }));
 
 app.get("/", (req, res) => {
