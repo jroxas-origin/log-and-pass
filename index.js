@@ -1,28 +1,26 @@
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+
 const express = require("express");
 const http = require("http");
 const axios = require("axios")
 const cors = require("cors");
 const bodyParser = require("body-parser");
-var multer = require('multer');
-var forms = multer();
+const multer = require("multer");
 
 const app = express();
 
 app.use(cors());
 
-// var rawBodySaver = function (req, res, buf, encoding) {
-//   if (buf && buf.length) {
-//     req.rawBody = buf.toString(encoding || 'utf8');
-//   }
-// }
+var rawBodySaver = function (req, res, buf, encoding) {
+  if (buf && buf.length) {
+    req.rawBody = buf.toString(encoding || 'utf8');
+  }
+}
 
-//app.use(bodyParser.json({ verify: rawBodySaver }));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(forms.array()); 
-//app.use(bodyParser.raw({ verify: rawBodySaver, type: '*/*' }));
-
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+app.use(bodyParser.json({ verify: rawBodySaver }));
+app.use(bodyParser.urlencoded({ verify: rawBodySaver, extended: true }));
+app.use(bodyParser.raw({ verify: rawBodySaver, type: '*/*' }));
+//app.use(multer().array());
 
 app.use('/', express.static(__dirname + '/public'));
 //app.use('/node_modules', express.static(__dirname + '/node_modules'));
@@ -32,27 +30,25 @@ app.get("/", (req, res) => {
 });
 
 app.post("/log", (req, res) => {
+  console.log(`############ Headers Start ####################`);
   console.log(req.headers);
+  console.log(`############ Headers End ############`);
+  console.log(`############ Raw Headers Start ############`);
   console.log(req.rawHeaders);
+  console.log(`############ Raw Headers End ############`);
+  console.log(`############ Body Start ############`);
   console.log(req.body);
+  console.log(`############ Body End ############`);
+  console.log(`############ Raw Body Start ############`);
   console.log(req.rawBody);
+  console.log(`############ Raw Body End ############`);
+  console.log(`############ Params Start ############`);
   console.log(req.params);
+  console.log(`############ Params End ############`);
+  console.log(`############ Query Start ############`);
   console.log(req.query);
-  var response = `
-    Headers:
-      ${req.headers}
-    Raw Headers: 
-      ${req.rawHeaders}
-    Body:
-      ${req.body}
-    Raw Body:
-      ${req.rawBody}
-    Params:
-      ${req.params}
-    Query:
-      ${req.query}
-  `;
-  res.status(200).send(response);
+  console.log(`############ Query End ############`);
+  res.status(200).send(`See server logs for output.`);
 });
 
 app.post("/rest", (req, res) => {
