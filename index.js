@@ -18,7 +18,7 @@ app.use(cors());
 
 //app.use(bodyParser.json({ verify: rawBodySaver }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ verify: rawBodySaver, extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(forms.array()); 
 //app.use(bodyParser.raw({ verify: rawBodySaver, type: '*/*' }));
 
