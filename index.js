@@ -31,8 +31,27 @@ app.get("/", (req, res) => {
 });
 
 app.post("/log", (req, res) => {
-  console.log(req);
-  res.status(200).send(req);
+  console.log(req.headers);
+  console.log(req.rawHeaders);
+  console.log(req.body);
+  console.log(req.rawBody);
+  console.log(req.params);
+  console.log(req.query);
+  var response = `
+    Headers:
+      ${req.headers}
+    Raw Headers: 
+      ${req.rawHeaders}
+    Body:
+      ${req.body}
+    Raw Body:
+      ${req.rawBody}
+    Params:
+      ${req.params}
+    Query:
+      ${req.query}
+  `;
+  res.status(200).send(response);
 });
 
 app.post("/rest", (req, res) => {
