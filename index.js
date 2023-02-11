@@ -3,6 +3,8 @@ const http = require("http");
 const axios = require("axios")
 const cors = require("cors");
 const bodyParser = require("body-parser");
+var multer = require('multer');
+var forms = multer();
 
 const app = express();
 
@@ -16,6 +18,7 @@ var rawBodySaver = function (req, res, buf, encoding) {
 
 app.use(bodyParser.json({ verify: rawBodySaver }));
 app.use(bodyParser.urlencoded({ verify: rawBodySaver, extended: true }));
+app.use(forms.array()); 
 app.use(bodyParser.raw({ verify: rawBodySaver, type: '*/*' }));
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
@@ -25,6 +28,11 @@ app.use('/', express.static(__dirname + '/public'));
 
 app.get("/", (req, res) => {
   res.send("Hello from server");
+});
+
+app.post("/log", (req, res) => {
+  console.log(req);
+  res.status(200).send(req);
 });
 
 app.post("/rest", (req, res) => {
