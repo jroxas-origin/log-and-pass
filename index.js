@@ -29,6 +29,59 @@ app.get("/", (req, res) => {
   res.send("Hello from server");
 });
 
+app.get("/geo-json", (req, res) => {
+  const data = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": []
+      },
+      "properties": {
+        "prop0": "value0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": []
+      },
+      "properties": {
+        "prop0": "value0",
+        "prop1": 0.0
+      }
+    }
+  ]
+}
+  res.send(data);
+  
+});
+
+app.get("/log", (req, res) => {
+  console.log(`############ Headers Start ####################`);
+  console.log(req.headers);
+  console.log(`############ Headers End ############`);
+  console.log(`############ Raw Headers Start ############`);
+  console.log(req.rawHeaders);
+  console.log(`############ Raw Headers End ############`);
+  console.log(`############ Body Start ############`);
+  console.log(req.body);
+  console.log(`############ Body End ############`);
+  console.log(`############ Raw Body Start ############`);
+  console.log(req.rawBody);
+  console.log(`############ Raw Body End ############`);
+  console.log(`############ Params Start ############`);
+  console.log(req.params);
+  console.log(`############ Params End ############`);
+  console.log(`############ Query Start ############`);
+  console.log(req.query);
+  console.log(`############ Query End ############`);
+  res.status(200).send(`See server logs for output.`);
+});
+
 app.post("/log", (req, res) => {
   console.log(`############ Headers Start ####################`);
   console.log(req.headers);
