@@ -37,7 +37,7 @@ app.get("/geo-json", (req, res) => {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [46.997064, -120.545119]
+        "coordinates": [-120.545119, 46.997064]
       },
       "properties": {
         "Parcel Number": "12345",
@@ -54,7 +54,7 @@ app.get("/geo-json", (req, res) => {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [47.031632, -120.528613]
+        "coordinates": [-120.528613, 47.031632]
       },
       "properties": {
         "Parcel Number": "54321",
@@ -72,7 +72,7 @@ app.get("/geo-json", (req, res) => {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [46.997064, -120.545119]
+        "coordinates": [-120.545119, 46.997064]
       },
       "properties": {
         "Parcel Number": "11223344",
@@ -85,18 +85,6 @@ app.get("/geo-json", (req, res) => {
             {"Service Point Id": "1212334111"}
           ]
         }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": []
-      },
-      "properties": {
-        "Parcel Number": "11223344",
-        "Account ID": "1231231122",
-        "Comment": "No coordinates"
       }
     }
   ]
