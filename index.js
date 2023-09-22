@@ -40,7 +40,14 @@ app.get("/geo-json", (req, res) => {
         "coordinates": []
       },
       "properties": {
-        "prop0": "value0"
+        "Parcel Number": "12345",
+        "Account ID": "1234567890",
+        "Rates" : ['Residential - Electric'],
+        "Service Point Group" : {
+          "Service Points" : [
+            {"Service Point Id": "1234512345"}
+          ]
+        }
       }
     },
     {
@@ -50,8 +57,34 @@ app.get("/geo-json", (req, res) => {
         "coordinates": []
       },
       "properties": {
-        "prop0": "value0",
-        "prop1": 0.0
+        "Parcel Number": "54321",
+        "Account ID": "0987654321",
+        "Rates" : ['Residential - Electric', 'Residential - Gas'],
+        "Service Point Group" : {
+          "Service Points" : [
+            {"Service Point Id": "1212312112"},
+            {"Service Point Id": "5432154321"}
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [46.997064, 46.997064 -120.545119]
+      },
+      "properties": {
+        "Parcel Number": "11223344",
+        "Account ID": "1231231122",
+        "Rates" : ['Residential - Electric', 'Residential - Gas', , 'Residential - Water'],
+        "Service Point Group" : {
+          "Service Points" : [
+            {"Service Point Id": "1212312112"},
+            {"Service Point Id": "5432154321"},
+            {"Service Point Id": "1212334111"}
+          ]
+        }
       }
     }
   ]
