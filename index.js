@@ -41,13 +41,7 @@ app.get("/geo-json", (req, res) => {
       },
       "properties": {
         "Parcel Number": "12345",
-        "Account ID": "1234567890",
-        "Rates" : ['Residential - Electric'],
-        "Service Point Group" : {
-          "Service Points" : [
-            {"Service Point Id": "1234512345"}
-          ]
-        }
+        "Account ID": "1234567890"
       }
     },
     {
@@ -58,14 +52,7 @@ app.get("/geo-json", (req, res) => {
       },
       "properties": {
         "Parcel Number": "54321",
-        "Account ID": "0987654321",
-        "Rates" : ['Residential - Electric', 'Residential - Gas'],
-        "Service Point Group" : {
-          "Service Points" : [
-            {"Service Point Id": "1212312112"},
-            {"Service Point Id": "5432154321"}
-          ]
-        }
+        "Account ID": "0987654321"
       }
     },
     {
@@ -76,15 +63,7 @@ app.get("/geo-json", (req, res) => {
       },
       "properties": {
         "Parcel Number": "11223344",
-        "Account ID": "1231231122",
-        "Rates" : ['Residential - Electric', 'Residential - Gas', , 'Residential - Water'],
-        "Service Point Group" : {
-          "Service Points" : [
-            {"Service Point Id": "1212312112"},
-            {"Service Point Id": "5432154321"},
-            {"Service Point Id": "1212334111"}
-          ]
-        }
+        "Account ID": "1231231122"
       }
     }
   ]
