@@ -30,6 +30,45 @@ app.get("/", (req, res) => {
 });
 
 app.get("/geo-json", (req, res) => {
+//   const data = {
+//   "type": "FeatureCollection",
+//   "features": [
+//     {
+//       "type": "Feature",
+//       "geometry": {
+//         "type": "Point",
+//         "coordinates": [-120.545119, 46.997064]
+//       },
+//       "properties": {
+//         "Parcel Number": "12345",
+//         "Account ID": "1234567890"
+//       }
+//     },
+//     {
+//       "type": "Feature",
+//       "geometry": {
+//         "type": "Point",
+//         "coordinates": [-120.528613, 47.031632]
+//       },
+//       "properties": {
+//         "Parcel Number": "54321",
+//         "Account ID": "0987654321"
+//       }
+//     },
+//     {
+//       "type": "Feature",
+//       "geometry": {
+//         "type": "Point",
+//         "coordinates": [-120.545119, 46.997064]
+//       },
+//       "properties": {
+//         "Parcel Number": "11223344",
+//         "Account ID": "1231231122"
+//       }
+//     }
+//   ]
+// }
+
   const data = {
   "type": "FeatureCollection",
   "features": [
@@ -37,37 +76,78 @@ app.get("/geo-json", (req, res) => {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.545119, 46.997064]
+        "coordinates": [
+          -120.5233688,
+          47.0059051
+        ]
       },
       "properties": {
-        "Parcel Number": "12345",
-        "Account ID": "1234567890"
+        "premiseId": "0001981343",
+        "parcelNumber": "793934",
+        "address": "1305 N VISTA RD",
+        "customerPhoneNumber": "(208) 250-0820",
+        "accountNumber": "6178425621",
+        "rateCode": "ST10",
+        "externalServicePointId": "080395886900",
+        "serviceType": "Storm Water",
+        "status": "Connected",
+        "meterLocation": "",
+        "genericNotes": "",
+        "servicePointType": "Storm Water Residential",
+        "routeNumber": "103",
+        "badgeNumber": "",
+        "serialNumber": "",
+        "manufacturer": "",
+        "model": "",
+        "multiplier": "",
+        "installDate": "",
+        "removalDate": "",
+        "disconnectedDate": "",
+        "lastTested": "",
+        "ertId": "",
+        "latestConsumption": "",
+        "lastReadDate": ""
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.528613, 47.031632]
+        "coordinates": [
+          -120.5233688,
+          47.0059051
+        ]
       },
       "properties": {
-        "Parcel Number": "54321",
-        "Account ID": "0987654321"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.545119, 46.997064]
-      },
-      "properties": {
-        "Parcel Number": "11223344",
-        "Account ID": "1231231122"
+        "premiseId": "0001981343",
+        "parcelNumber": "793934",
+        "address": "1305 N VISTA RD",
+        "customerPhoneNumber": "(208) 250-0820",
+        "accountNumber": "6178425621",
+        "rateCode": "WW110,W110",
+        "externalServicePointId": "360607473700",
+        "serviceType": "Water",
+        "status": "Connected",
+        "meterLocation": "NEC 28' E 7' N",
+        "genericNotes": "",
+        "servicePointType": "Water Residential",
+        "routeNumber": "103",
+        "badgeNumber": "W190748907",
+        "serialNumber": "190748907",
+        "manufacturer": "Badger",
+        "model": "BADGER-M25-5/8IN",
+        "multiplier": "1.000000",
+        "installDate": "2019-11-20-00.00.00",
+        "removalDate": "",
+        "disconnectedDate": "",
+        "lastTested": "",
+        "ertId": "79618005",
+        "latestConsumption": "27,062.00",
+        "lastReadDate": "2023-09-08"
       }
     }
   ]
-}
+};
   res.send(data);
   
 });
