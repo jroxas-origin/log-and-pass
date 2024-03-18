@@ -199,7 +199,8 @@ app.post("/log", (req, res) => {
   console.log(`############ Query Start ############`);
   console.log(req.query);
   console.log(`############ Query End ############`);
-  res.status(200).send(`See server logs for output.`);
+  //res.status(200).send(`See server logs for output.`);
+  res.status(200).send(req.body);
 });
 
 app.post("/rest", (req, res) => {
