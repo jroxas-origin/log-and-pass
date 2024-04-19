@@ -59,6 +59,17 @@ app.get("/simple-geo-json", (req, res) => {
         "type": "Feature",
         "geometry": {
           "type": "Point",
+          "coordinates": [-120.558613, 47.051632]
+        },
+        "properties": {
+          "Parcel Number": "11223344",
+          "Account ID": "1231231123"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
           "coordinates": [-120.545119, 46.997064]
         },
         "properties": {
