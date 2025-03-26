@@ -35,7 +35,20 @@ app.post("/ccb-appt-no-slots", (req, res) => {
 		<wsa:Action>GetWOLineApptWinAvail</wsa:Action>
 	</env:Header>
 	<env:Body>
-		<CCBAppointmentResponse><list name="AVAIL_APPT" /><RESULT><RESULT>ERROR</RESULT><ERRORCODE>ASER001</ERRORCODE><ERRORMESSAGE>No slots found</ERRORMESSAGE></RESULT></CCBAppointmentResponse>
+		<CCBAppointmentResponse>
+	<wfmMessageNumber>
+		<RESULT>
+			<RESULT>ERROR</RESULT>
+			<ERRORCODE>ASER001</ERRORCODE>
+			<ERRORMESSAGE>No slots found</ERRORMESSAGE>
+		</RESULT>
+		<errorCode>ASER001</errorCode>
+		<errorMessage>No slots found</errorMessage>
+		<messageText>No slots found!</messageText>
+		<messageCategory>9</messageCategory>
+		<messageNumber>17130</messageNumber>
+	</wfmMessageNumber>
+</CCBAppointmentResponse>
 	</env:Body>
 </env:Envelope>`;
     res.send(data);
