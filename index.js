@@ -39,7 +39,7 @@ app.post("/ccb-appt-no-slots", (req, res) => {
             	<wfmMessageNumber>
 	    		<messageCategory>9</messageCategory>
      			<messageNumber>17130</messageNumber>
-     		</<wfmMessageNumber>
+     		</wfmMessageNumber>
         </CCBAppointmentResponse>
 	</env:Body>
 </env:Envelope>`;
