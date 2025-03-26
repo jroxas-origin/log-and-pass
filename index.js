@@ -36,20 +36,8 @@ app.post("/ccb-appt-no-slots", (req, res) => {
 	</env:Header>
 	<env:Body>
 	<CCBAppointmentResponse>
-	<wfmMessageNumber>
-		<RESULT>
-			<RESULT>ERROR</RESULT>
-			<ERRORCODE>101</ERRORCODE>
-			<ERRORMESSAGE>No slots found</ERRORMESSAGE>
-		</RESULT>
-		<errorCode>101</errorCode>
-		<errorMessage>No slots found</errorMessage>
-		<messageText>No slots found!</messageText>
-		<messageCategory>9</messageCategory>
-		<messageNumber>101</messageNumber>
-	</wfmMessageNumber>
+	<wfmMessageNumber>101</wfmMessageNumber>
 </CCBAppointmentResponse>
- 
 	</env:Body>
 </env:Envelope>`;
     res.send(data);
