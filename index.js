@@ -39,14 +39,14 @@ app.post("/ccb-appt-no-slots", (req, res) => {
 	<wfmMessageNumber>
 		<RESULT>
 			<RESULT>ERROR</RESULT>
-			<ERRORCODE>ASER001</ERRORCODE>
+			<ERRORCODE>EAM-00006</ERRORCODE>
 			<ERRORMESSAGE>No slots found</ERRORMESSAGE>
 		</RESULT>
-		<errorCode>ASER001</errorCode>
+		<errorCode>EAM-00006</errorCode>
 		<errorMessage>No slots found</errorMessage>
 		<messageText>No slots found!</messageText>
-		<messageCategory>9</messageCategory>
-		<messageNumber>17130</messageNumber>
+		<messageCategory>90000</messageCategory>
+		<messageNumber>11006</messageNumber>
 	</wfmMessageNumber>
 </CCBAppointmentResponse>
 	</env:Body>
