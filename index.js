@@ -335,8 +335,8 @@ app.use('/ouaf/webservices/xla/ExtractFAInfo', (req, res) => {
         </SOAP-ENV:Body>
     </SOAP-ENV:Envelope>
     `;
-    
-    res.send(data);
+
+    res.set('Content-Type', 'text/xml; charset=utf-8').send(data);
 
 })
 
