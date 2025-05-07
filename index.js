@@ -43,6 +43,40 @@ app.post("/ccb-appt-no-slots", (req, res) => {
     res.send(data);
 });
 
+app.use('/verify-badge-number', (req, res) => {
+
+    const data =
+        `<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+                <SOAP-ENV:Header>
+                    <wsse:Security SOAP-ENV:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+                        <wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                            <wsu:Created>2024-12-18T22:13:06Z</wsu:Created>
+                            <wsu:Expires>2024-12-18T22:14:06Z</wsu:Expires>
+                        </wsu:Timestamp>
+                    </wsse:Security>
+                </SOAP-ENV:Header>
+                <SOAP-ENV:Body>
+                    <ValidateMeterItemResponse xmlns="http://splwg.com/ValidateMeterItemResponse.xsd">
+                        <ValidateMeterItemService>
+                            <ValidateMeterItemHeader BadgeNumber="" ExternalID="" ExternalMessageID="" FieldActivityID="" Language="" MeterIdNumber="" MeterIdType="" MeterItemFlag="" SerialNumber="" ServicePointID=""/>
+                            <ValidateMeterItemDetails BadgeNumber="TEST123450" ExternalID="" ExternalMessageID="" FieldActivityID="" Manufacturer="M-M" MessageNumber="0" MessageText="" MeterConfigurationType="WTR-SINGLE" MeterIdNumber="" MeterIdType="" MeterItemFlag="M" Model="N/A" SerialNumber="" ServicePointID="1280530910" ValidationStatus="Y">
+                            <Registers>
+                                <RegistersHeader EffectiveDateTime="2015-11-30T01:00:00" LastReadingSequence="1" MeterID="1150672949"/>
+                                <RegistersRow ChannelID="10909956" ConsumptiveSubtractive="S" EffectiveDateTime="2015-11-30T01:00:00" FullScale="0.0000000" HighLimit="986.000000" HowToUse="+" Interval="false" IntervalRegisterType="" IntvDescription="" LowLimit="982.000000" MeterID="1150672949" NumberofDigitsLeft="4" NumberofDigitsRight="0" Protocol="" ProtocolDescription="" ReadOutType="DIALS" ReadOutTypeDescription="Dials" RegisterConstant="1.000000" RegisterID="1150918262" RegisterInformation="CCF, format 4.0, 1.000000, Additive" RegistryType="Register" Seq="1" TimeofUse="" TimeofUseDescription="" Tolerance="0.00000" UnitofMeasure="CCF" UnitofMeasureDescription="100 cubic feet of water" Version="1">
+                                    <RegistryCharacteristics>
+                                        <RegistryCharacteristicsHeader LastCharacteristicTypeCode="" LastSequenceNumber="0" ListDefaultForFlag="" RegisterID="1150918262"/>
+                                    </RegistryCharacteristics>
+                                </RegistersRow>
+                            </Registers>
+                            </ValidateMeterItemDetails>
+                        </ValidateMeterItemService>
+                    </ValidateMeterItemResponse>
+                </SOAP-ENV:Body>
+            </SOAP-ENV:Envelope>`;
+            
+    res.send(data);
+});
+
 app.use('/ouaf/webservices/xla/ExtractFAInfo', (req, res) => {
 
     const data = `
