@@ -259,8 +259,10 @@ app.post("/soap", (req, res) => {
 app.use('/failed-fa-cancel', (req, res) => {
 
     const payload = {
-        responseDetail: {
-            messageStatus: 'N'
+        root: {
+            responseDetail: {
+                messageStatus: 'N'
+            }
         }
     };
 
