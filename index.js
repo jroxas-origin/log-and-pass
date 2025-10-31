@@ -260,9 +260,7 @@ app.use('/failed-fa-cancel', (req, res) => {
 
     const payload = {
         root: {
-            responseDetail: {
-                messageStatus: 'N'
-            }
+            messageStatus: 'N'
         }
     };
 
